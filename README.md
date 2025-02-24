@@ -1,4 +1,4 @@
-# Prediksi dan Klasifikasi Penyakit Tanaman Kentang Menggunakan Densnet 🍂
+# Prediksi dan Klasifikasi Penyakit Tanaman Kentang Menggunakan DenseNet121 🍂
 
 # Deskripsi Proyek
 Proyek ini bertujuan untuk mendeteksi dan mengklasifikasikan kondisi tanaman kentang berdasarkan gambar daun, mengidentifikasi apakah tanaman mengalami penyakit early blight, late blight, atau dalam kondisi sehat. Model ini dilatih menggunakan dataset yang terdiri dari 1.722 gambar untuk training, 430 gambar untuk validasi, dan 2.152 gambar untuk pengujian, dengan tiga kategori label utama, yaitu Potato___Early_blight (0), Potato___Late_blight (1), dan Potato___healthy (2).
@@ -32,8 +32,15 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 
 # Hasil
 
-Model dilatih selama 20 epoch dengan hasil yang menunjukkan kinerja yang sangat baik dalam mengklasifikasikan kondisi tanaman kentang. Pada akhir pelatihan, model mencapai akurasi sebesar 99,05% dengan nilai loss sebesar 0,0573. Saat diuji menggunakan dataset pengujian, model tetap menunjukkan performa tinggi dengan nilai test loss sebesar 0,0534 dan test accuracy sebesar 98,70%. Hasil ini menunjukkan bahwa model memiliki kemampuan generalisasi yang sangat baik dalam mengenali pola dan fitur penyakit pada daun kentang, sehingga dapat digunakan sebagai alat bantu yang andal dalam diagnosis penyakit tanaman secara otomatis.
+Hasil pelatihan model selama 20 epoch menunjukkan kinerja yang sangat baik dalam mengklasifikasikan kondisi tanaman kentang berdasarkan daun yang terkena penyakit atau dalam kondisi sehat. Pada akhir pelatihan, model mencapai akurasi pelatihan sebesar 99,05% dengan nilai loss 0,0573, yang menunjukkan bahwa model mampu mengenali pola dengan sangat baik pada data latih. 
 
+![Plot Akurasi](https://github.com/adstika20/Image-Classification/blob/main/Plot%20Akurasi.png)
+
+Grafik Loss Curve di sebelah kiri menunjukkan bahwa baik train loss maupun validation loss mengalami penurunan yang konsisten seiring bertambahnya epoch, yang mengindikasikan bahwa model semakin memahami pola dalam data dan mengalami konvergensi yang baik.
+
+Pada grafik Accuracy Curve di sebelah kanan, terlihat bahwa akurasi pelatihan meningkat secara bertahap dari awal hingga akhir pelatihan, sedangkan akurasi validasi tetap tinggi dan stabil di atas 95% sejak awal. Stabilnya akurasi validasi menunjukkan bahwa model tidak mengalami overfitting yang signifikan, karena performa model pada data yang belum pernah dilihat tetap tinggi.
+
+Saat diuji menggunakan dataset pengujian, model tetap menunjukkan performa yang sangat baik dengan test loss sebesar 0,0534 dan test accuracy sebesar 98,70%. Hal ini menunjukkan bahwa model memiliki kemampuan generalisasi yang sangat baik dalam mengenali pola dan fitur penyakit pada daun kentang, sehingga dapat digunakan sebagai alat bantu diagnosis yang andal dalam mendeteksi penyakit tanaman secara otomatis. Akurasi yang tinggi serta gap yang kecil antara train loss dan validation loss menunjukkan bahwa model ini cukup stabil dan dapat digunakan dalam skenario dunia nyata tanpa mengalami penurunan kinerja yang signifikan.
 
 # Sumber Data 
 [Kaggle](https://www.kaggle.com/datasets/hafiznouman786/potato-plant-diseases-data/data)
