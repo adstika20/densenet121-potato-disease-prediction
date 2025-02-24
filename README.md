@@ -42,5 +42,16 @@ Pada grafik Accuracy Curve di sebelah kanan, terlihat bahwa akurasi pelatihan me
 
 Saat diuji menggunakan dataset pengujian, model tetap menunjukkan performa yang sangat baik dengan test loss sebesar 0,0534 dan test accuracy sebesar 98,70%. Hal ini menunjukkan bahwa model memiliki kemampuan generalisasi yang sangat baik dalam mengenali pola dan fitur penyakit pada daun kentang, sehingga dapat digunakan sebagai alat bantu diagnosis yang andal dalam mendeteksi penyakit tanaman secara otomatis. Akurasi yang tinggi serta gap yang kecil antara train loss dan validation loss menunjukkan bahwa model ini cukup stabil dan dapat digunakan dalam skenario dunia nyata tanpa mengalami penurunan kinerja yang signifikan.
 
+# Rekomendasi Action Items
+
+1. Melakukan augmentasi data yang lebih ekstensif (rotasi, flipping, perubahan pencahayaan, dan noise).
+2. Memperluas dataset dengan lebih banyak sampel dari berbagai sumber.
+3. Melatih beberapa lapisan atas DenseNet121 agar lebih spesifik dalam mengenali fitur penyakit.
+4. Menyesuaikan hyperparameter untuk meningkatkan performa model.
+5. Mencoba model lain seperti EfficientNet, ResNet50, berdasarkan akurasi dan efisiensi komputasi.
+
 # Sumber Data 
 [Kaggle](https://www.kaggle.com/datasets/hafiznouman786/potato-plant-diseases-data/data)
+
+
+
