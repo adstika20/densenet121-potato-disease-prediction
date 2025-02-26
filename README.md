@@ -32,15 +32,15 @@ python -c "import tensorflow as tf; print(tf.__version__)"
 
 # Hasil
 
-Hasil pelatihan model selama 20 epoch menunjukkan kinerja yang sangat baik dalam mengklasifikasikan kondisi tanaman kentang berdasarkan daun yang terkena penyakit atau dalam kondisi sehat. Pada akhir pelatihan, model mencapai akurasi pelatihan sebesar 99,05% dengan nilai loss 0,0573, yang menunjukkan bahwa model mampu mengenali pola dengan sangat baik pada data latih. 
+Hasil pelatihan model selama 20 epoch menunjukkan kinerja yang sangat baik dalam mengklasifikasikan kondisi tanaman kentang berdasarkan daun yang terkena penyakit atau dalam kondisi sehat. Pada akhir pelatihan, model mencapai akurasi pelatihan sebesar 99,05% dengan nilai loss 0,0573, yang menandakan bahwa model mampu mengenali pola dengan sangat baik pada data latih. Selain itu, akurasi validasi yang tinggi dan stabil menunjukkan bahwa model memiliki generalisasi yang baik terhadap data baru, sehingga dapat diandalkan untuk mendeteksi penyakit tanaman kentang secara akurat.
 
-![Plot Akurasi](https://github.com/adstika20/Image-Classification/blob/main/Plot%20Akurasi.png)
+![Plot Akurasi](https://github.com/adstika20/Image-Classification/blob/main/download.png)
 
-Grafik Loss Curve di sebelah kiri menunjukkan bahwa baik train loss maupun validation loss mengalami penurunan yang konsisten seiring bertambahnya epoch, yang mengindikasikan bahwa model semakin memahami pola dalam data dan mengalami konvergensi yang baik.
+Berdasarkan plot kurva loss dan akurasi dari model prediksi dan klasifikasi penyakit tanaman kentang menggunakan DenseNet121 sebagai feature extractor, diperoleh beberapa temuan penting. Kurva loss menunjukkan bahwa baik train loss maupun validation loss mengalami penurunan signifikan sejak awal pelatihan dan mencapai titik yang stabil di sekitar nilai rendah. Hal ini menunjukkan bahwa model belajar secara efektif dan tidak mengalami overfitting yang serius.
 
-Pada grafik Accuracy Curve di sebelah kanan, terlihat bahwa akurasi pelatihan meningkat secara bertahap dari awal hingga akhir pelatihan, sedangkan akurasi validasi tetap tinggi dan stabil di atas 95% sejak awal. Stabilnya akurasi validasi menunjukkan bahwa model tidak mengalami overfitting yang signifikan, karena performa model pada data yang belum pernah dilihat tetap tinggi.
+Kurva akurasi menunjukkan peningkatan yang konsisten, di mana train accuracy terus meningkat hingga mendekati 100%, sedangkan validation accuracy juga tinggi dan stabil, bahkan sejak epoch awal. Dengan hasil evaluasi pada test set yang menunjukkan test accuracy sebesar 98.98% dan test loss sebesar 0.0292, dapat disimpulkan bahwa model ini memiliki performa yang sangat baik dalam mengklasifikasikan penyakit tanaman kentang.
 
-Saat diuji menggunakan dataset pengujian, model tetap menunjukkan performa yang sangat baik dengan test loss sebesar 0,0534 dan test accuracy sebesar 98,70%. Hal ini menunjukkan bahwa model memiliki kemampuan generalisasi yang sangat baik dalam mengenali pola dan fitur penyakit pada daun kentang, sehingga dapat digunakan sebagai alat bantu diagnosis yang andal dalam mendeteksi penyakit tanaman secara otomatis. Akurasi yang tinggi serta gap yang kecil antara train loss dan validation loss menunjukkan bahwa model ini cukup stabil dan dapat digunakan dalam skenario dunia nyata tanpa mengalami penurunan kinerja yang signifikan.
+Arsitektur model yang menggunakan DenseNet121 sebagai feature extractor dan menambahkan lapisan tambahan seperti Conv2D, Batch Normalization, dan Dropout, membantu dalam meningkatkan generalisasi model terhadap data yang belum pernah dilihat. Dengan hasil ini, model ini siap digunakan dalam sistem deteksi penyakit tanaman kentang berbasis deep learning.
 
 # Rekomendasi Action Items
 
