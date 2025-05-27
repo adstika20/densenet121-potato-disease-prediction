@@ -1,57 +1,96 @@
-# Deep Learning-Based Classification of Potato Leaf Diseases with DenseNet121 🍂
+# 🍂 Deep Learning-Based Classification of Potato Leaf Diseases with DenseNet121
 
-# Deskripsi Proyek
-Proyek ini bertujuan untuk mendeteksi dan mengklasifikasikan kondisi tanaman kentang berdasarkan gambar daun, mengidentifikasi apakah tanaman mengalami penyakit early blight, late blight, atau dalam kondisi sehat. Model ini dilatih menggunakan dataset yang terdiri dari 1.722 gambar untuk training, 430 gambar untuk validasi, dan 2.152 gambar untuk pengujian, dengan tiga kategori label utama, yaitu Potato___Early_blight (0), Potato___Late_blight (1), dan Potato___healthy (2).
+---
 
-Model dikembangkan menggunakan arsitektur DenseNet121 sebagai backbone dengan bobot awal dari ImageNet, yang tidak dilatih ulang pada tahap awal untuk mempertahankan fitur-fitur pretrained. Setelah backbone, model dilengkapi dengan beberapa lapisan tambahan, termasuk normalisasi batch, lapisan fully connected dengan aktivasi ReLU, dropout untuk mengurangi overfitting, dan lapisan output dengan tiga neuron menggunakan aktivasi softmax. Model ini dirancang untuk mengoptimalkan kinerja klasifikasi dengan memanfaatkan kombinasi feature extraction dari DenseNet dan lapisan tambahan yang lebih dalam untuk meningkatkan akurasi dalam mendeteksi penyakit pada tanaman kentang.
+## 1. Project Title  
+**Deep Learning-Based Classification of Potato Leaf Diseases Using DenseNet121**
 
-# Cara Instalasi
-Sebelum menjalankan proyek ini, pastikan Anda memiliki Python dan semua dependensi yang diperlukan. Anda dapat menginstalnya dengan menggunakan file requirements.txt yang telah disediakan.
-1. Pastikan Python telah terinstal
-Proyek ini berjalan dengan Python 3.7 atau versi lebih tinggi. Anda dapat mengecek versi Python dengan perintah berikut:
+---
+
+## 2. Project Description  
+This project focuses on detecting and classifying diseases in potato plants through leaf images. The model identifies whether a potato plant is affected by:  
+- 🦠 Early Blight  
+- 🦠 Late Blight  
+- 🌿 Healthy  
+
+The model is trained on a dataset of 1,722 training images, 430 validation images, and 2,152 testing images. It uses DenseNet121 pretrained on ImageNet as backbone, with additional layers like batch normalization, fully connected layers with ReLU activation, dropout, and a softmax output layer for optimized classification.
+
+---
+
+## 3. Results / Preview  
+The model was trained for 20 epochs and achieved:  
+- 🎯 Training Accuracy: **99.05%**  
+- 📉 Training Loss: **0.0573**  
+- 🎯 Testing Accuracy: **98.98%**  
+- 📉 Testing Loss: **0.0292**  
+
+Training and validation curves show effective learning without overfitting, indicating strong generalization.
+
+![Accuracy and Loss Plot](https://github.com/adstika20/Image-Classification/blob/main/download.png)
+
+---
+
+## 4. 📁 Project Structure  
+
 ```
-python --version
+├── data/ # Dataset images and labels
+├── models/ # Model architecture and weights
+├── notebooks/ # Jupyter notebooks for exploration and training
+├── scripts/ # Training and evaluation scripts
+├── requirements.txt # Project dependencies
+├── README.md # Project documentation
+└── utils/ # Utility functions (preprocessing, metrics, etc.)
+
 ```
-2. Buat virtual environment (Opsional, tetapi disarankan)
-Disarankan menggunakan virtual environment agar tidak mengganggu sistem utama. Jalankan perintah berikut untuk membuat dan mengaktifkan environment baru:
-```
+
+## 5. ⚙️ Installation / Requirements  
+
+Ensure you have **Python 3.7+** installed. Then follow:  
+
+```bash
+# Clone the repo
+git clone <repo_url>
+cd <repo_folder>
+
+# (Optional) Create and activate virtual environment
 python -m venv env
-source env/bin/activate  # Untuk pengguna macOS/Linux
-env\Scripts\activate     # Untuk pengguna Windows
-```
-3. Instal dependensi proyek
-Setelah virtual environment aktif, instal semua dependensi dengan perintah berikut:
-```
+source env/bin/activate  # macOS/Linux
+env\Scripts\activate     # Windows
+
+# Install dependencies
 pip install -r requirements.txt
-```
-5. Verifikasi Instalasi
-Untuk memastikan semua dependensi telah terinstal dengan benar, jalankan:
-```
+
+# Verify TensorFlow installation
 python -c "import tensorflow as tf; print(tf.__version__)"
+
 ```
 
-# Hasil
+## 6. 📦 Dataset
 
-Hasil pelatihan model selama 20 epoch menunjukkan kinerja yang sangat baik dalam mengklasifikasikan kondisi tanaman kentang berdasarkan daun yang terkena penyakit atau dalam kondisi sehat. Pada akhir pelatihan, model mencapai akurasi pelatihan sebesar 99,05% dengan nilai loss 0,0573, yang menandakan bahwa model mampu mengenali pola dengan sangat baik pada data latih. Selain itu, akurasi validasi yang tinggi dan stabil menunjukkan bahwa model memiliki generalisasi yang baik terhadap data baru, sehingga dapat diandalkan untuk mendeteksi penyakit tanaman kentang secara akurat.
+The dataset used in this project is sourced from **Kaggle**:  
+[Potato Plant Diseases Dataset](https://www.kaggle.com/datasets/hafiznouman786/potato-plant-diseases-data/data)  
 
-![Plot Akurasi](https://github.com/adstika20/Image-Classification/blob/main/download.png)
+### Dataset Details:  
+- Split into three subsets for model training and evaluation:  
+  - Training set: 1,722 images  
+  - Validation set: 430 images  
+  - Testing set: 2,152 images  
 
-Berdasarkan plot kurva loss dan akurasi dari model prediksi dan klasifikasi penyakit tanaman kentang menggunakan DenseNet121 sebagai feature extractor, diperoleh beberapa temuan penting. Kurva loss menunjukkan bahwa baik train loss maupun validation loss mengalami penurunan signifikan sejak awal pelatihan dan mencapai titik yang stabil di sekitar nilai rendah. Hal ini menunjukkan bahwa model belajar secara efektif dan tidak mengalami overfitting yang serius.
+This diverse and well-labeled dataset ensures effective training and robust model evaluation.
 
-Kurva akurasi menunjukkan peningkatan yang konsisten, di mana train accuracy terus meningkat hingga mendekati 100%, sedangkan validation accuracy juga tinggi dan stabil, bahkan sejak epoch awal. Dengan hasil evaluasi pada test set yang menunjukkan test accuracy sebesar 98.98% dan test loss sebesar 0.0292, dapat disimpulkan bahwa model ini memiliki performa yang sangat baik dalam mengklasifikasikan penyakit tanaman kentang.
+---
 
-Arsitektur model yang menggunakan DenseNet121 sebagai feature extractor dan menambahkan lapisan tambahan seperti Conv2D, Batch Normalization, dan Dropout, membantu dalam meningkatkan generalisasi model terhadap data yang belum pernah dilihat. Dengan hasil ini, model ini siap digunakan dalam sistem deteksi penyakit tanaman kentang berbasis deep learning.
+## 7. Methodology
 
-# Rekomendasi Action Items
+- **Backbone:** Utilized **DenseNet121** pretrained on ImageNet as a powerful feature extractor to capture intricate patterns in leaf images.  
+- **Added Layers:**  
+  - Batch Normalization to stabilize and accelerate training.  
+  - Fully Connected (Dense) layers with ReLU activation to learn complex representations.  
+  - Dropout layers to prevent overfitting and improve generalization.  
+- **Output Layer:** Softmax activation with 3 neurons to classify input images into the three disease categories.  
+- **Training:** Conducted over 20 epochs optimizing categorical cross-entropy loss.  
+- **Evaluation:** Model performance validated on a separate test set to ensure accuracy and robustness in real-world conditions.
 
-1. Melakukan augmentasi data yang lebih ekstensif (rotasi, flipping, perubahan pencahayaan, dan noise).
-2. Memperluas dataset dengan lebih banyak sampel dari berbagai sumber.
-3. Melatih beberapa lapisan atas DenseNet121 agar lebih spesifik dalam mengenali fitur penyakit.
-4. Menyesuaikan hyperparameter untuk meningkatkan performa model.
-5. Mencoba model lain seperti EfficientNet, ResNet50, berdasarkan akurasi dan efisiensi komputasi.
+---
 
-# Sumber Data 
-[Kaggle](https://www.kaggle.com/datasets/hafiznouman786/potato-plant-diseases-data/data)
-
-
-
+⭐ If you find this project useful, please consider giving it a star!
