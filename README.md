@@ -1,4 +1,4 @@
-# Prediksi dan Klasifikasi Penyakit Tanaman Kentang Menggunakan DenseNet121 🍂
+# Deep Learning-Based Classification of Potato Leaf Diseases with DenseNet121 🍂
 
 # Deskripsi Proyek
 Proyek ini bertujuan untuk mendeteksi dan mengklasifikasikan kondisi tanaman kentang berdasarkan gambar daun, mengidentifikasi apakah tanaman mengalami penyakit early blight, late blight, atau dalam kondisi sehat. Model ini dilatih menggunakan dataset yang terdiri dari 1.722 gambar untuk training, 430 gambar untuk validasi, dan 2.152 gambar untuk pengujian, dengan tiga kategori label utama, yaitu Potato___Early_blight (0), Potato___Late_blight (1), dan Potato___healthy (2).
